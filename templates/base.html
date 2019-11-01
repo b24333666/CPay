@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Crypto Pay</title>
+	{% load staticfiles %}
+	<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body bgcolor="#cccccc">
+	<table width="1800" border="0" align="center" cellpadding="0" cellspacing="0">
+	  <tr>
+		<td height="560" valign="top" background="{% static "images/homephoto.png" %}">
+		  <div class="titleDiv"> Crypto Pay<br /></div>
+		  <div class="menulink">
+			<a href="/index/">Home page</a> 
+			<a href="/login/">Login</a>
+		  </div>
+		</td>
+	  </tr>
+	  <tr>
+		<td >
+		  <div id="mainRegion">
+			  <table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+				<tr>
+				   <td>
+					 {% block content %}{% endblock %}
+				  </td>
+			   </tr>
+			  </table>
+			</div>
+		  </td>
+	  </tr>
+	  <tr>
+		<td align="center"  class="trademark">CCP &nbsp;版權所有 &copy; 2017&nbsp;eHappy Album All Rights Reserved. </td>
+	  </tr>
+	  <tr>
+		<!-- <td><img name="album_r4_c1" width="778" height="24" border="0" id="album_r4_c1" alt="" /></td> -->
+	  </tr>
+	</table>
+</body>
+</html>

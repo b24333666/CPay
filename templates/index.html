@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load extras %}
+
+{% block content %}
+<style type="text/css">
+.resize{
+  width: auto;
+  width: 200px;
+}
+.resize{
+  height: auto;
+  height: 200px;
+}
+</style>
+  <div class="subjectDiv"> 網路相簿總覽 </div>
+    <div class="actionDiv">Coin：{{totalalbum}} </div>  
+    <div class="normalDiv"></div>
+    {% for album in albums %}
+      <div class="albumDiv">
+        <div>
+        
+          {% if lengths|extras:forloop.counter0 == 0 %}
+            <img src="{% static "images/nopic.png" %}" alt="Not icon" width="120" height="120" border="0" />
+          {% else %}
+            <a href="/albumshow/{{album.id}}/">
+            <img src="/media/{{photos|extras:forloop.counter0}}" width="120" height="120" border="0" /></a>
+          {% endif %}
+        </div>
+        <div class="albuminfo">
+          {% if lengths|extras:forloop.counter0 == 0 %}
+            {{album.atitle}}<br />
+          {% else %}
+            <a href="/albumshow/{{album.id}}/">{{album.atitle}}</a><br />
+          {% endif %}
+          <span class="smalltext">Total {{lengths|extras:forloop.counter0}} coin</span><br>
+          <br>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock %}

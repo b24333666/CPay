@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="subjectDiv"> Manage Login </div>             
+    <div class="albumdesc">
+      <form action="." id="form1" name="form1" method="POST">
+        {% csrf_token %}
+        <table border="0" align="center" cellpadding="4" cellspacing="0">
+          <tr>
+            <td><p>Account</p></td>
+            <td><p>
+              <input type="text" name="username" id="username" />
+              </p></td>
+            </tr>
+          <tr>
+            <td><p>Password</p></td>
+            <td><p>
+              <input type="password" name="passwd" id="passwd" />
+              </p></td>
+            </tr>
+          <tr>
+            <td colspan="2" align="center"><p>
+              <input type="submit" name="button" id="button" value="Login Manage" />
+              <input type="button" name="button2" id="button2" value="Backup" onClick="window.history.back();" />
+              </p></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+{% endblock %}

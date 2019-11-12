@@ -2,18 +2,18 @@
 {% load staticfiles %}
 
 {% block content %}
-  <div class="subjectDiv"> {{monophoto.palbum.atitle}}</div>
+  <div class="subjectDiv">{{monophoto.palbum.atitle}}</div>
     <div class="actionDiv">Cryptocurrencies: {{totalphoto}} </div>
     <div class="normalDiv">
-      <p><strong>拍攝時間</strong>：{{monophoto.palbum.adate}} 
-        <strong>拍攝地點</strong>：{{monophoto.palbum.alocation}}</p>
-      <p>{{monophoto.palbum.adesc}}</p>
+      <!-- <p><strong>拍攝時間</strong>：{{monophoto.palbum.adate}} 
+        <strong>拍攝地點</strong>：{{monophoto.palbum.alocation}}</p> -->
+      <p>Address: {{monophoto.palbum.adesc}}</p>
     </div>
     {% for photo in photos %}
       <div class="albumDiv">
-        <div><a href="/albumphoto/{{photo.id}}/{{album}}/"><img src="/media/{{photo.purl}}" width="120" height="120" border="0" /></a></a></div>
-        <div class="albuminfo"><a href="/albumphoto/{{photo.id}}/{{album}}/">{{photo.psubject}}</a><br />
-          <span class="smalltext">點閱次數：</span>{{photo.phit}}</div>
+        <div><img src="/media/{{photo.purl}}" width="120" height="120" border="0" /></div>
+        <!-- <div class="albuminfo"><a href="/albumphoto/{{photo.id}}/{{album}}/">{{photo.psubject}}</a><br /> -->
+          <!-- <span class="smalltext">點閱次數：</span>{{photo.phit}}</div> -->
       </div>
     {% endfor %}
 {% endblock %}

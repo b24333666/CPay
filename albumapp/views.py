@@ -5,6 +5,9 @@ from django.contrib import auth
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 import os
+import qrcode
+from django.http import HttpResponse
+from django.utils.six import BytesIO
 
 def index(request):
 	albums = models.AlbumModel.objects.all().order_by('-id')  #讀取所有相簿
@@ -126,3 +129,20 @@ def adminfix(request, albumid=None, photoid=None, deletetype=None):  #相簿維�
 			photo.delete()  #從資料庫移除
 			return redirect('/adminfix/' + str(album.id) + '/')
 	return render(request, "adminfix.html", locals())
+
+def makeqrcode (request, data):
+	ETH_Address = "0x8C3FaBCC2d5F7272E6e3F9C1dD64abe218aba277"
+	GasAVG = 160000
+	Data = ''
+
+	Message = 'ethereum:{}gas={}&data={}'.format(ETH_Address,GasAVG,Data)
+	qr = qrcode.QRCode(version=3, error_correction= qrcode.constants.ERROR_CORRECT_H, box_size=6 ,border=4)
+	qr.add_data(Message)
+	qr.make(fit=True)
+
+	img = qr.make_image()
+	buf = BytesIO()
+	img.save(buf)
+	image_stream = buf.getvalue()
+	response = HttpResponse(image_stream, content_type = "image/PNG")
+	return response

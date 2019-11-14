@@ -12,11 +12,11 @@
 
 {% block content %}
   <div class="subjectDiv"> CryptoCurrency Info</div>
-    <div class="actionDiv">相片總數:{{totalphoto}} </div>
+    <!-- <div class="actionDiv">相片總數:{{totalphoto}} </div> -->
     <form action="/adminfix/{{album.id}}/999999/" method="POST" name="form1" id="form1" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="normalDiv">
-        <p class="heading">相簿內容</p>
+        <p class="heading">Setting</p>
         <p>Coin Name：
           <input name="album_title" type="text" id="album_title" value="{{album.atitle}}" />        
         </p>

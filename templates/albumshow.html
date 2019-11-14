@@ -11,7 +11,9 @@
     </div>
     {% for photo in photos %}
       <div class="albumDiv">
-        <div><img src="/media/{{photo.purl}}" width="120" height="120" border="0" /></div>
+        <!-- <div><img src="/media/{{photo.purl}}" width="120" height="120" border="0" /></div> -->
+        {% load qr_code %}
+        {% qr_from_text "{{monophoto.palbum.adesc}}" size=8 image_format="png" error_correction="L" %}
         <!-- <div class="albuminfo"><a href="/albumphoto/{{photo.id}}/{{album}}/">{{photo.psubject}}</a><br /> -->
           <!-- <span class="smalltext">點閱次數：</span>{{photo.phit}}</div> -->
       </div>

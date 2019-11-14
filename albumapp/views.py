@@ -130,7 +130,7 @@ def adminfix(request, albumid=None, photoid=None, deletetype=None):  #相簿維�
 			return redirect('/adminfix/' + str(album.id) + '/')
 	return render(request, "adminfix.html", locals())
 
-def makeqrcode (request, data):
+def makeqrcode (request, ETH_Address=None, GasAVG=None, Data=None):
 	ETH_Address = "0x8C3FaBCC2d5F7272E6e3F9C1dD64abe218aba277"
 	GasAVG = 160000
 	Data = ''
@@ -144,5 +144,5 @@ def makeqrcode (request, data):
 	buf = BytesIO()
 	img.save(buf)
 	image_stream = buf.getvalue()
-	response = HttpResponse(image_stream, content_type = "image/PNG")
+	response = HttpResponse(image_stream, content_type = "static/image/PNG")
 	return response

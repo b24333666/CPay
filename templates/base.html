@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CPay</title>
 	{% load staticfiles %}
 	<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
 </head>
-<body bgcolor="#cccccc">
-<div  class="container">
-	<table width="1800" border="0" align="center" cellpadding="0" cellspacing="0">
-	<!-- <table class="rwdtable"> -->
-	  <tr>
-		<td height="560" valign="top" background="{% static "images/homephoto.png" %}">
-		  <div class="titleDiv"> CPay<br /></div>
-		  <div class="menulink">
-			<a href="/index/">Home page</a> 
-			<a href="/login/">Login</a>
-		  </div>
-		</td>
-	  </tr>
-	  <tr>
-		<td >
-		  <div id="mainRegion">
-			  <table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
-				<tr>
-				   <td>
-					 {% block content %}{% endblock %}
-				  </td>
-			   </tr>
+<body>
+	<!-- <div  class="container"> -->
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto">
+				<table width="1800" border="0" align="center" cellpadding="0" cellspacing="0">
+				<!-- <table class="rwdtable"> -->
+					<tr>
+						<td height="560" valign="top" background="{% static "images/homephoto.png" %}">
+						<!-- <td> -->
+							<div class="titleDiv"><img src="{% static "images/CPay.png" %}" alt="CPay" height="200"></div>
+							<div class="menulink">
+							<a href="/index/">Home page</a> 
+							<a href="/login/">Login</a>
+							</div>
+						</td>
+						</tr>
+						<tr>
+						<td >
+						<div id="mainRegion">
+					<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+							<tr>
+								<td>
+								{% block content %}{% endblock %}
+								</td>
+							</tr>
 			  </table>
 			</div>
 		  </td>
 	  </tr>
-	  <tr>
-		<td align="center"  class="trademark">CCP &nbsp;版權所有 &copy; 2019&nbsp;eHappy Album All Rights Reserved. </td>
-	  </tr>
+	  	<tr>
+				<td align="center"  class="trademark">CPay, &nbsp; Inc. &copy; 2019&nbsp;eHappy Album All Rights Reserved. </td>
+	  	</tr>
 	  <tr>
 		<!-- <td><img name="album_r4_c1" width="778" height="24" border="0" id="album_r4_c1" alt="" /></td> -->
 	  </tr>
-	</table>
-</div>
+		</table>
+		</div>
+		</div>
+	<!-- </div> -->
 </body>
 </html>

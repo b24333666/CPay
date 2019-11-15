@@ -23,19 +23,39 @@
           {% if lengths|extras:forloop.counter0 == 0 %}
             <img src="{% static "images/nopic.png" %}" alt="Not icon" width="120" height="120" border="0" />
           {% else %}
-            <a href="/albumshow/{{album.id}}/">
-            <img src="/media/{{photos|extras:forloop.counter0}}" width="120" height="120" border="0" /></a>
+            <!-- <a href="/albumshow/{{album.id}}/">
+            <img src="/media/{{photos|extras:forloop.counter0}}" width="120" height="120" border="0" /></a> -->
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter"><img src="/media/{{photos|extras:forloop.counter0}}" width="120" height="120" border="0" />
+              <!-- Launch demo modal -->
+            </button>
+            
           {% endif %}
         </div>
         <div class="albuminfo">
-          {% if lengths|extras:forloop.counter0 == 0 %}
             {{album.atitle}}<br />
-          {% else %}
-            <a href="/albumshow/{{album.id}}/">{{album.atitle}}</a><br />
-          {% endif %}
-          <span class="smalltext">Total {{lengths|extras:forloop.counter0}} coin</span><br>
-          <br>
         </div>
       </div>
     {% endfor %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5> -->
+            <h6>Address: {{album.adesc}}</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {% load qr_code %}
+            {% qr_from_text album.adesc size=10 image_format="png" error_correction="L" %}
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
 {% endblock %}

@@ -2,20 +2,47 @@
 {% load staticfiles %}
 
 {% block content %}
-  <div class="subjectDiv">{{monophoto.palbum.atitle}}</div>
+  <!-- <div class="subjectDiv">{{monophoto.palbum.atitle}}</div>
     <div class="actionDiv">Cryptocurrencies: {{totalphoto}} </div>
-    <div class="normalDiv">
+    <div class="normalDiv"> -->
       <!-- <p><strong>拍攝時間</strong>：{{monophoto.palbum.adate}} 
         <strong>拍攝地點</strong>：{{monophoto.palbum.alocation}}</p> -->
-      <p>Address: {{monophoto.palbum.adesc}}</p>
-    </div>
-    {% for photo in photos %}
-      <div class="albumDiv">
+      <!-- <p>Address: {{monophoto.palbum.adesc}}</p> -->
+    <!-- </div>
+    {% for photo in photos %} -->
+      <!-- <div class="albumDiv"> -->
         <!-- <div><img src="/media/{{photo.purl}}" width="120" height="120" border="0" /></div> -->
-        {% load qr_code %}
-        {% qr_from_text monophoto.palbum.adesc size=8 image_format="png" error_correction="L" %}
+        <!-- {% load qr_code %}
+        {% qr_from_text monophoto.palbum.adesc size=8 image_format="png" error_correction="L" %} -->
         <!-- <div class="albuminfo"><a href="/albumphoto/{{photo.id}}/{{album}}/">{{photo.psubject}}</a><br /> -->
           <!-- <span class="smalltext">點閱次數：</span>{{photo.phit}}</div> -->
+      <!-- </div> -->
+  <!-- Button trigger modal -->
+      <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter"><img src="/media/{{photo.purl}}" width="120" height="120" border="0" />
+        <!-- Launch demo modal -->
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5> -->
+              <h6>Address: {{monophoto.palbum.adesc}}</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {% load qr_code %}
+              {% qr_from_text monophoto.palbum.adesc size=10 image_format="png" error_correction="L" %}
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
       </div>
-    {% endfor %}
+    <!-- {% endfor %} -->
 {% endblock %}

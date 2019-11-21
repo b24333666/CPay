@@ -52,24 +52,31 @@
           <div class="modal-body">
             {% load qr_code %}
             {% qr_from_text album.adesc size=10 image_format="png" error_correction="L" %}
+            <b>Transactions Status</b>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             <table class="table table-borderless">
               <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">From</th>
+                <!-- <tr>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
                   <th scope="col">To</th>
                   <th scope="col">Hash</th>
-                </tr>
+                </tr> -->
               </thead>
-              <tbody>
+              <tbody style="word-break:break-all; word-wrap:break-all">
                 <tr>
-                  <th scope="row">1</th>
-                  <td>A</td>
-                  <td>B</td>
-                  <td>C</td>
+                  <th scope="row">From</th>
+                  <td width="400" scope="row">0x564286362092d8e7936f0549571a803b203aaced</th>
+                </tr>
+                <tr>
+                  <th scope="row">To</th>
+                  <td width="400" scope="row">0x8c3fabcc2d5f7272e6e3f9c1dd64abe218aba277</th>
+                </tr>
+                <tr>
+                  <th scope="row">Txn Hash</th>
+                  <td width="400">0x231e29077abd98daaa960e2361b0aabd8f2fd3600981f5614dedd6ec807b74c3</th>
                 </tr>
               </tbody>
             </table>

@@ -11,6 +11,7 @@ def index(request):
 	totalalbum = len(albums)  #相簿總數
 	photos = []  #每一相簿第1張相片串列
 	lengths = []  #每一相簿的相片總數串列
+	# adddress = albums
 	for album in albums:
 		photo = models.PhotoModel.objects.filter(palbum__atitle=album.atitle).order_by('-id')  #讀取相片
 		lengths.append(len(photo))  #加入相片總數
@@ -19,6 +20,7 @@ def index(request):
 		else:
 			photos.append(photo[0].purl)  #加入第1張相片
 	return render(request, "index.html", locals())
+	
 	
 def albumshow(request, albumid=None):  #顯示相簿
 	album = albumid  #以區域變數傳送給html

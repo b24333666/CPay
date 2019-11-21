@@ -4,5 +4,5 @@ CPay 建立於 Bolckchain 低交易成本 POS 網頁介面 可供他人查詢消
 CPay is built on Bolckchain Low Transaction Cost POS web interface for others to check consumer receipts
 
 ![image](https://github.com/b24333666/CPay/blob/master/CPay-removebg-preview.png)
-![image](https://github.com/b24333666/CPay/blob/master/home_page.png)
+![image](https://github.com/b24333666/CPay/blob/master/home_page_1.png)
 

@@ -42,8 +42,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <!-- <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5> -->
+<<<<<<< HEAD
             <h6>{{album}} Address: {{album.adesc}}</h6>
             <!-- <h6>{{album}}</h6> -->
+=======
+            <h6>Address: {{album.adesc}}</h6>
+>>>>>>> 8e164ebe08dab3d500bda2dd513e116c8927abd7
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -51,6 +55,7 @@
           <div class="modal-body">
             {% load qr_code %}
             {% qr_from_text album.adesc size=10 image_format="png" error_correction="L" %}
+<<<<<<< HEAD
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -72,6 +77,8 @@
                 </tr>
               </tbody>
             </table>
+=======
+>>>>>>> 8e164ebe08dab3d500bda2dd513e116c8927abd7
           </div>
           <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -5,6 +5,9 @@ from django.contrib import auth
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 import os
+import qrcode
+from django.http import HttpResponse
+from django.utils.six import BytesIO
 
 def index(request):
 	albums = models.AlbumModel.objects.all().order_by('-id')  #讀取所有相簿
